@@ -36,4 +36,11 @@ public class MovieController {
 		return new ResponseEntity<Optional<Movie>>(getMovie, HttpStatus.OK);
 	}
 	
+	@GetMapping("/imdb/{id}")
+	public ResponseEntity<Optional<Movie>> getMovieByImdbID(@PathVariable("id") String id) throws MovieNotFoundException {
+		Optional<Movie> getMovie = movieService.getMovieByImdbID(id);
+		
+		return new ResponseEntity<Optional<Movie>>(getMovie, HttpStatus.OK);
+	}
+	
 }

@@ -10,5 +10,5 @@ import com.movie.MovieList.entity.Reviews;
 
 @Repository
 public interface ReviewRepository extends JpaRepository<Reviews, Long> {
-	Optional<Reviews> findReviewsByImdbId(String imdbId);
+	Optional<Reviews> findReviewsById(Long Id);
 }

@@ -14,10 +14,14 @@ public class ReviewService {
 	@Autowired
 	private ReviewRepository reviewRepo;
 	
-	public Reviews createReview(String reviewBody, String imdbId) {
+	public Optional<Reviews> getReviewById(Long id) {
+		return reviewRepo.findReviewsById(id);
+	}
+	
+	public Reviews createReview(String reviewBody, Long Id) {
 		Reviews review = null;
 		
-		Optional<Reviews> reviewsFromImdb = reviewRepo.findReviewsByImdbId(imdbId);
+		Optional<Reviews> reviewsFromImdb = reviewRepo.findReviewsById(Id);
 		
 		if(reviewsFromImdb.isPresent()) {
 			reviewsFromImdb.get().setBody(reviewBody);

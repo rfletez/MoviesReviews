@@ -31,6 +31,10 @@ public class Reviews {
 		this.body = body;
 	}
 	
+	public Reviews(String body) {
+		this.body = body;
+	}
+	
 
 	public Long getId() {
 		return id;

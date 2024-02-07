@@ -1,5 +1,5 @@
-import axios from "axios"; 
+import axios from "axios";
 
-function axiosConfig() {
-    
-}
+export default axios.create({
+    baseURL: "http://localhost:8087/api/v1"
+})

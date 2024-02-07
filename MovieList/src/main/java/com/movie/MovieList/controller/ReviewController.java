@@ -21,7 +21,7 @@ import com.movie.MovieList.service.ReviewService;
 import jakarta.validation.Valid;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3007")
 @RequestMapping("/api/v1/reviews")
 public class ReviewController {
 	

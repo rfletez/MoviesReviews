@@ -27,8 +27,9 @@ public class ReviewService {
 			reviewsFromImdb.get().setBody(reviewBody);
 			review = new Reviews(reviewBody);
 		}
-		
-		reviewRepo.save(review);
+		else {
+			reviewRepo.save(review);
+		}
 		
 		return review;
 	}

@@ -18,8 +18,10 @@ import jakarta.validation.constraints.Size;
 @Table(name = "movies")
 public class Movie {
 	
+	private static final long serialVersionUID = 1L;
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@Column(name = "imdb_id")

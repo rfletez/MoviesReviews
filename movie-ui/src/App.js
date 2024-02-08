@@ -1,8 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-
 import api from './api/axiosConfig';
 import { useState, useEffect } from 'react';
+import Layout from './components/Layout';
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
 
 function App() {
 
@@ -14,13 +15,21 @@ function App() {
       setMovies(response.data);
     }
     catch (err) {
-      console.log(error);
+      console.log(err);
     }
   }
 
+  useEffect(() => {
+    getMovies(); //Will execute when the app first loads
+  }, [])
+
   return (
     <div className="App">
-
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path='/home' element={<Home />}></Route>
+        </Route>
+      </Routes>
     </div>
   );
 }

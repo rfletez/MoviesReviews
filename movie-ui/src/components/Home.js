@@ -1,11 +1,11 @@
 import React from 'react';
+import ListOfMovies from './ListOfMovies';
+
 //rafce command on VS Code
 
-const Home = ({ movies }) => {
+const Home = ({ homeMovies }) => {
     return (
-        <div>
-
-        </div>
+        <ListOfMovies movies={homeMovies} />
     )
 }
 
